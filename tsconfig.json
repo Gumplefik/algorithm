@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "lib": ["es2017", "dom"],
+    "outDir": "./dist",
+    "strictNullChecks": true,
+    "removeComments": true,
+    "noImplicitUseStrict": true,
+    "esModuleInterop": true,
+    "noEmitOnError": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "sourceMap": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"]
+  },
+  "include": ["index.ts"]
+}
