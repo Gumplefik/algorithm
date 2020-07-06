@@ -5,6 +5,7 @@ import { DirectInsertSort } from './algorithm/sort/DirectInsert';
 import { ShellSort } from './algorithm/sort/ShellSort';
 import { BubbleSort } from "./algorithm/sort/BubbleSort";
 import {QuickSort} from "./algorithm/sort/QuickSort";
+import {MergeSort} from "./algorithm/sort/MergeSort";
 
 let arr = [1, 5, 7, 0, 10, -1];
 let result = [-1, 0, 1, 5, 7, 10];
@@ -26,5 +27,8 @@ describe('directSort', () => {
     })
     it('test QuickSort', () => {
         expect(QuickSort(arr1).join(',')).to.equal(result1.join(','))
+    })
+    it('test MergeSort', () => {
+        expect(MergeSort(arr1).join(',')).to.equal(result1.join(','))
     })
 });
