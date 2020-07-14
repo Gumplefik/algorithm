@@ -1,11 +1,11 @@
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
-import { DirectSelectSort } from "./algorithm/sort/DirectSelect";
-import { DirectInsertSort } from './algorithm/sort/DirectInsert';
-import { ShellSort } from './algorithm/sort/ShellSort';
-import { BubbleSort } from "./algorithm/sort/BubbleSort";
-import {QuickSort} from "./algorithm/sort/QuickSort";
-import {MergeSort} from "./algorithm/sort/MergeSort";
+import { DirectSelectSort } from "./src/algorithm/sort/DirectSelect";
+import { DirectInsertSort } from './src/algorithm/sort/DirectInsert';
+import { ShellSort } from './src/algorithm/sort/ShellSort';
+import { BubbleSort } from "./src/algorithm/sort/BubbleSort";
+import {QuickSort} from "./src/algorithm/sort/QuickSort";
+import {MergeSort} from "./src/algorithm/sort/MergeSort";
 
 let arr = [1, 5, 7, 0, 10, -1];
 let result = [-1, 0, 1, 5, 7, 10];

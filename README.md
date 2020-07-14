@@ -9,4 +9,6 @@
 /algorithm/math
 // mean sort algorithm, there are many kinds of sort algorithm
 /algorithm/sort
+// leetcode
+/algorithm/leetcode
 ```

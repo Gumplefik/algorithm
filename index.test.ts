@@ -1,8 +1,8 @@
 import { describe, it } from "mocha";
 import { expect } from "chai";
-import { findRepeatNumber } from "./offer/3";
-import { ListNode, Solution } from './algorithm/math/ReservoirSampling';
-import { divingBoard, respace } from './algorithm/math/Memorize'
+import { findRepeatNumber } from "./src/offer/3";
+import { ListNode, Solution } from './src/algorithm/math/ReservoirSampling';
+import { divingBoard, respace } from './src/algorithm/math/Memorize'
 
 
 describe('offer3', () => {
