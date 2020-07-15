@@ -4,6 +4,8 @@ import {maxSubArray} from "./src/leetcode/maxSubArray";
 import {maxProfit} from "./src/leetcode/maxProfit";
 import {maxProfit2} from "./src/leetcode/maxProfit2";
 import {LRUCache} from "./src/leetcode/LRUCache";
+import {MinStack} from "./src/leetcode/minStack";
+import {canWinNim} from "./src/leetcode/Nim";
 
 
 describe('dp', () => {
@@ -60,6 +62,44 @@ describe('dp', () => {
     result.push(cache.get(1))
     result.push(cache.get(2))
     expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('min stack case 1', () => {
+    let minStack = new MinStack();
+    let expects = [-3, 0, -2]
+    let result = []
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-3);
+    result.push(minStack.getMin())
+    minStack.pop();
+    result.push(minStack.top())
+    result.push(minStack.getMin())
+    expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('min stack case 2', () => {
+    let minStack = new MinStack();
+    let expects = [-1, -1]
+    let result = []
+    minStack.push(-1);
+    result.push(minStack.top())
+    result.push(minStack.getMin())
+    expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('min stack case 3', () => {
+    let minStack = new MinStack();
+    let expects = [-2, -1, -2]
+    let result = []
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-1);
+    result.push(minStack.getMin())
+    result.push(minStack.top())
+    minStack.pop()
+    result.push(minStack.getMin())
+    expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('nim', () => {
+    expect(canWinNim(1348820612)).to.equal(false)
   })
 });
 
