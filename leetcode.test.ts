@@ -4,6 +4,10 @@ import {maxSubArray} from "./src/leetcode/maxSubArray";
 import {maxProfit} from "./src/leetcode/maxProfit";
 import {maxProfit2} from "./src/leetcode/maxProfit2";
 import {LRUCache} from "./src/leetcode/LRUCache";
+import {generateParenthesis} from "./src/leetcode/generateParenthesis";
+import {subsets} from "./src/leetcode/subsets";
+import {stringify} from "./src/utils/common";
+import {permute} from "./src/leetcode/permute";
 
 
 describe('dp', () => {
@@ -60,6 +64,32 @@ describe('dp', () => {
     result.push(cache.get(1))
     result.push(cache.get(2))
     expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('generateParenthesis case 1', () => {
+    let expects = [
+      "((()))",
+      "(()())",
+      "(())()",
+      "()(())",
+      "()()()"
+    ]
+    expect(generateParenthesis(3).join(",")).to.equal(expects.join(","))
+  })
+  it('subsets case 1', () => {
+    let expects = [
+      [3],
+      [1],
+      [2],
+      [1,2,3],
+      [1,3],
+      [2,3],
+      [1,2],
+      []
+    ]
+    expect(stringify(subsets([1,2,3]))).to.equal(stringify(expects))
+  })
+  it('permute case 1', () => {
+    expect(permute([1,2,3]).length).to.equal(6)
   })
 });
 
