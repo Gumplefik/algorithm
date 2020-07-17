@@ -8,6 +8,8 @@ import {generateParenthesis} from "./src/leetcode/generateParenthesis";
 import {subsets} from "./src/leetcode/subsets";
 import {stringify} from "./src/utils/common";
 import {permute} from "./src/leetcode/permute";
+import {MinStack} from "./src/leetcode/minStack";
+import {canWinNim} from "./src/leetcode/Nim";
 
 
 describe('dp', () => {
@@ -90,6 +92,43 @@ describe('dp', () => {
   })
   it('permute case 1', () => {
     expect(permute([1,2,3]).length).to.equal(6)
+  it('min stack case 1', () => {
+    let minStack = new MinStack();
+    let expects = [-3, 0, -2]
+    let result = []
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-3);
+    result.push(minStack.getMin())
+    minStack.pop();
+    result.push(minStack.top())
+    result.push(minStack.getMin())
+    expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('min stack case 2', () => {
+    let minStack = new MinStack();
+    let expects = [-1, -1]
+    let result = []
+    minStack.push(-1);
+    result.push(minStack.top())
+    result.push(minStack.getMin())
+    expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('min stack case 3', () => {
+    let minStack = new MinStack();
+    let expects = [-2, -1, -2]
+    let result = []
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-1);
+    result.push(minStack.getMin())
+    result.push(minStack.top())
+    minStack.pop()
+    result.push(minStack.getMin())
+    expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('nim', () => {
+    expect(canWinNim(1348820612)).to.equal(false)
   })
 });
 
