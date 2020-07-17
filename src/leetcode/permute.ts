@@ -25,14 +25,14 @@ export function permute(nums: number[]): number[][] {
 
 function bfs(result:Array<Array<number>>, prev:Array<number>, arr:Array<number>) {
     arr.forEach((item, i) => {
-        let cache = Object.assign(prev)
+        let cache = Object.assign([], prev)
         cache.push(item)
         if (arr.length <= 1) {
             result.push(cache)
         } else {
             let nextArr = Object.assign([], arr)
             nextArr.splice(i,1)
-            bfs(result, Object.assign([], cache), nextArr)
+            bfs(result, cache, nextArr)
         }
     })
 }
