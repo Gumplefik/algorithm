@@ -20,7 +20,6 @@
 export function permute(nums: number[]): number[][] {
     let result: Array<Array<number>> = []
     bfs(result, [], nums)
-    console.log(result)
     return result
 }
 

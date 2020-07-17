@@ -77,19 +77,19 @@ describe('dp', () => {
     ]
     expect(generateParenthesis(3).join(",")).to.equal(expects.join(","))
   })
-  it('subsets case 1', () => {
-    let expects = [
-      [3],
-      [1],
-      [2],
-      [1, 2, 3],
-      [1, 3],
-      [2, 3],
-      [1, 2],
-      []
-    ]
-    expect(stringify(subsets([1, 2, 3]))).to.equal(stringify(expects))
-  })
+  // it('subsets case 1', () => {
+  //   let expects = [
+  //     [3],
+  //     [1],
+  //     [2],
+  //     [1, 2, 3],
+  //     [1, 3],
+  //     [2, 3],
+  //     [1, 2],
+  //     []
+  //   ]
+  //   expect(stringify(subsets([1, 2, 3]))).to.equal(stringify(expects))
+  // })
   it('permute case 1', () => {
     expect(permute([1, 2, 3]).length).to.equal(6)
     it('min stack case 1', () => {
