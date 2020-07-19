@@ -10,6 +10,9 @@ import {stringify} from "./src/utils/common";
 import {permute} from "./src/leetcode/permute";
 import {MinStack} from "./src/leetcode/minStack";
 import {canWinNim} from "./src/leetcode/Nim";
+import {maximalSquare} from "./src/leetcode/maximalSquare";
+import {minimumTotal} from "./src/leetcode/minimumTotal";
+import {maxEnvelopes} from "./src/leetcode/maxEnvelopes";
 
 
 describe('dp', () => {
@@ -92,43 +95,80 @@ describe('dp', () => {
   // })
   it('permute case 1', () => {
     expect(permute([1, 2, 3]).length).to.equal(6)
-    it('min stack case 1', () => {
-      let minStack = new MinStack();
-      let expects = [-3, 0, -2]
-      let result = []
-      minStack.push(-2);
-      minStack.push(0);
-      minStack.push(-3);
-      result.push(minStack.getMin())
-      minStack.pop();
-      result.push(minStack.top())
-      result.push(minStack.getMin())
-      expect(result.join(",")).to.equal(expects.join(","))
-    })
-    it('min stack case 2', () => {
-      let minStack = new MinStack();
-      let expects = [-1, -1]
-      let result = []
-      minStack.push(-1);
-      result.push(minStack.top())
-      result.push(minStack.getMin())
-      expect(result.join(",")).to.equal(expects.join(","))
-    })
-    it('min stack case 3', () => {
-      let minStack = new MinStack();
-      let expects = [-2, -1, -2]
-      let result = []
-      minStack.push(-2);
-      minStack.push(0);
-      minStack.push(-1);
-      result.push(minStack.getMin())
-      result.push(minStack.top())
-      minStack.pop()
-      result.push(minStack.getMin())
-      expect(result.join(",")).to.equal(expects.join(","))
-    })
-    it('nim', () => {
-      expect(canWinNim(1348820612)).to.equal(false)
-    })
   });
+  it('min stack case 1', () => {
+    let minStack = new MinStack();
+    let expects = [-3, 0, -2]
+    let result = []
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-3);
+    result.push(minStack.getMin())
+    minStack.pop();
+    result.push(minStack.top())
+    result.push(minStack.getMin())
+    expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('min stack case 2', () => {
+    let minStack = new MinStack();
+    let expects = [-1, -1]
+    let result = []
+    minStack.push(-1);
+    result.push(minStack.top())
+    result.push(minStack.getMin())
+    expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('min stack case 3', () => {
+    let minStack = new MinStack();
+    let expects = [-2, -1, -2]
+    let result = []
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-1);
+    result.push(minStack.getMin())
+    result.push(minStack.top())
+    minStack.pop()
+    result.push(minStack.getMin())
+    expect(result.join(",")).to.equal(expects.join(","))
+  })
+  it('nim', () => {
+    expect(canWinNim(1348820612)).to.equal(false)
+  })
+  it('maxSquare case 1', () => {
+    expect(maximalSquare([
+      ['1', '0', '1', '0', '0'],
+      ['1', '0', '1', '1', '1'],
+      ['1', '1', '1', '1', '1'],
+      ['1', '0', '0', '1', '0'],
+    ])).to.equal(4)
+  })
+  it('minimumTotal case 1', () => {
+    expect(minimumTotal([
+      [2],
+      [3,4],
+      [6,5,7],
+      [4,1,8,3]
+    ])).to.equal(11)
+  })
+  it('maxEnvelopes case 1', () => {
+    expect(maxEnvelopes([[5,4],[6,4],[6,7],[2,3]])).to.equal(3)
+  })
+  it('maxEnvelopes case 2', () => {
+    expect(maxEnvelopes([[4,5],[6,7],[2,3]])).to.equal(3)
+  })
+  it('maxEnvelopes case 3', () => {
+    expect(maxEnvelopes([[4,5],[4,6],[6,7],[2,3],[1,1]])).to.equal(4)
+  })
+  it('maxEnvelopes case 4', () => {
+    expect(maxEnvelopes([[30,50],[12,15],[3,4],[12,2]])).to.equal(3)
+  })
+  it('maxEnvelopes case 5', () => {
+    expect(maxEnvelopes([[1,3],[3,5],[6,7],[6,8],[8,4],[9,5]])).to.equal(3)
+  })
+  it('maxEnvelopes case 6', () => {
+    expect(maxEnvelopes([[2,100],[3,200],[4,300],[5,500],[5,400],[5,250],[6,370],[6,360],[7,380]])).to.equal(5)
+  })
+  it('maxEnvelopes case 7', () => {
+    expect(maxEnvelopes([[46,89],[50,53],[52,68],[72,45],[77,81]])).to.equal(3)
+  })
 })

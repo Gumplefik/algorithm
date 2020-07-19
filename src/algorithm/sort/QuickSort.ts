@@ -7,16 +7,8 @@ import { swap } from '../../utils/array'
 // 时间复杂度： O(nLog(n))  一看到二分相关就是log(n)
 // 最好的情况，O(nLog(n))
 // 最差的情况，O(n^2)
-// 平均：O(nLog(n))
-// 空间复杂度 nLog(n)
-// 不稳定
-// 优化后的算法： 鸡尾酒排序
-// 主要原理： 向两端冒泡
-// 流程：
-// 冒泡出最大的，冒泡出最小的
-// 冒泡出第二大的，冒泡出第二小的
-// 不断重复
-export function QuickSort(arr: Array<number>, start=0, end=arr.length): Array<number> {
+
+export function QuickSort(arr: Array<number>, start=0, end=arr.length-1): Array<number> {
     if (start < end) {
         let pivot = partion(arr, start, end);
         QuickSort(arr, start, pivot-1);
@@ -29,9 +21,11 @@ function partion(arr: Array<number>, start: number, end: number) : number {
     let flag = arr[start];
     let k = start;
     for (let i=start+1; i<=end; i++) {
-        if (arr[i] < flag) {
-            swap(arr, k, k+1);
-            swap(arr, k+1, i);
+        if (arr[i] <= flag) {
+            if (i-1 > k) {
+                swap(arr, k, k+1);
+            }
+            swap(arr, k, i);
             k++
         }
     }

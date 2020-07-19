@@ -1,7 +1,7 @@
 let cache: Array<number> = []
 
 export function factorialize(num: number) {
-    if (!isNotOrEmpty((cache[num]))) {
+    if (!isNullOrEmpty((cache[num]))) {
         return cache[num];
     }
     let result = 1;
@@ -14,7 +14,7 @@ export function factorialize(num: number) {
 }
 
 
-export function  isNotOrEmpty(val: any) {
+export function  isNullOrEmpty(val: any) {
     return val === undefined || val === null
 }
 
