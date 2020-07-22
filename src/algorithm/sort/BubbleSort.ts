@@ -10,13 +10,12 @@ import { swap } from '../../utils/array'
 // 稳定
 export function BubbleSort(arr: Array<number>): Array<number> {
     let l = arr.length;
-    for(let i=1 ;i<l-1; i++) {
-        for (let j=i; j<l; j++) {
+    for(let i=0; i<l; i++) {
+        for (let j=l-1; j>0; j--) {
             if (arr[j] < arr[j-1]) {
-                swap(arr, j, j-1);
+                swap(arr, j, j-1)
             }
         }
-
     }
     return arr
 }
