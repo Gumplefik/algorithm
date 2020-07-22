@@ -13,6 +13,9 @@ import {canWinNim} from "./src/leetcode/Nim";
 import {maximalSquare} from "./src/leetcode/maximalSquare";
 import {minimumTotal} from "./src/leetcode/minimumTotal";
 import {maxEnvelopes} from "./src/leetcode/maxEnvelopes";
+import {lengthOfLongestSubstring} from "./src/leetcode/lengthOfLongestSubstring";
+import {longestCommonPrefix} from "./src/leetcode/longestCommonPrefix";
+import {permutation} from "./src/leetcode/permutation";
 
 
 describe('dp', () => {
@@ -170,5 +173,32 @@ describe('dp', () => {
   })
   it('maxEnvelopes case 7', () => {
     expect(maxEnvelopes([[46,89],[50,53],[52,68],[72,45],[77,81]])).to.equal(3)
+  })
+  it('lengthOfLongestSubstring  case 1', () => {
+    expect(lengthOfLongestSubstring("abcabcbb")).to.equal(3)
+  })
+  it('lengthOfLongestSubstring  case 2', () => {
+    expect(lengthOfLongestSubstring("pwwkew")).to.equal(3)
+  })
+  it('lengthOfLongestSubstring  case 3', () => {
+    expect(lengthOfLongestSubstring("aa")).to.equal(1)
+  })
+  it('lengthOfLongestSubstring  case 4', () => {
+    expect(lengthOfLongestSubstring("au")).to.equal(2)
+  })
+  it('lengthOfLongestSubstring  case 5', () => {
+    expect(lengthOfLongestSubstring("dvdf")).to.equal(3)
+  })
+  it('longestCommonPrefix case 1', () => {
+    expect(longestCommonPrefix(["flower","flow","flight"])).to.equal("fl")
+  })
+  it('longestCommonPrefix case 2', () => {
+    expect(longestCommonPrefix(["dog","racecar","car"])).to.equal("")
+  })
+  it('permutation case 1', () => {
+    expect(permutation("abc").length).to.equal(6)
+  })
+  it('permutation case 2', () => {
+    expect(permutation("aab").length).to.equal(3)
   })
 })
