@@ -32,3 +32,7 @@ function partion(arr: Array<number>, start: number, end: number) : number {
     return k
 }
 
+
+export function QuickSortOne() {
+
+}

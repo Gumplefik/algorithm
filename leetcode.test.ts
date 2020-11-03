@@ -16,6 +16,10 @@ import {maxEnvelopes} from "./src/leetcode/maxEnvelopes";
 import {lengthOfLongestSubstring} from "./src/leetcode/lengthOfLongestSubstring";
 import {longestCommonPrefix} from "./src/leetcode/longestCommonPrefix";
 import {permutation} from "./src/leetcode/permutation";
+import {twoSum} from "./src/leetcode/twoSum";
+import {findMedianSortedArrays} from "./src/leetcode/findMedianSortedArrays";
+import {longestPalindrome} from "./src/leetcode/longestPalindrome";
+import {solveSudoku} from "./src/leetcode/solveSudoku";
 
 
 describe('dp', () => {
@@ -200,5 +204,47 @@ describe('dp', () => {
   })
   it('permutation case 2', () => {
     expect(permutation("aab").length).to.equal(3)
+  })
+  // it('checkInclusion case 1', () => {
+  //   expect(checkInclusion("abo", "eidbaoaoo")).to.equal(true)
+  // })
+  // it('checkInclusion case 2', () => {
+  //   expect(checkInclusion("dinitrophenylhydrazine", "acetylphenylhydrazine")).to.equal(true)
+  // })
+  it('twoSum case 1', () => {
+    expect(twoSum([2, 7, 11, 15], 9).join(",")).to.equal([0,1].join(","))
+  })
+  it('twoSum case 2', () => {
+    expect(twoSum([3, 2, 4], 6).join(",")).to.equal([1,2].join(","))
+  })
+  it('twoSum case 3', () => {
+    expect(twoSum([3,3], 6).join(",")).to.equal([0,1].join(","))
+  })
+  it('twoSum case 4', () => {
+    expect(twoSum([-1,-2,-3,-4,-5], -8).join(",")).to.equal([2,4].join(","))
+  })
+  it('findMedianSortedArrays case 1', () => {
+    expect(findMedianSortedArrays([1, 3], [2])).to.equal(2)
+  })
+  it('findMedianSortedArrays case 2', () => {
+    expect(findMedianSortedArrays([1, 3], [2, 4])).to.equal(2.5)
+  })
+  it('longestPalindrome case 1', () => {
+    expect(longestPalindrome("babad")).to.equal("bab")
+  })
+  it('longestPalindrome case 2', () => {
+    expect(longestPalindrome("cbbd")).to.equal("bb")
+  })
+  it('longestPalindrome case 3', () => {
+    expect(longestPalindrome("a")).to.equal("a")
+  })
+  it('longestPalindrome case 4', () => {
+    expect(longestPalindrome("bb")).to.equal("bb")
+  })
+  it('solveSudoku case 1', () => {
+    let input = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
+    let value = [["5","3","4","6","7","8","9","1","2"],["6","7","2","1","9","5","3","4","8"],["1","9","8","3","4","2","5","6","7"],["8","5","9","7","6","1","4","2","3"],["4","2","6","8","5","3","7","9","1"],["7","1","3","9","2","4","8","5","6"],["9","6","1","5","3","7","2","8","4"],["2","8","7","4","1","9","6","3","5"],["3","4","5","2","8","6","1","7","9"]]
+    solveSudoku(input)
+    expect(input.toString()).to.equal(value.toString())
   })
 })
