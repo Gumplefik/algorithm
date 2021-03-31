@@ -1,12 +1,12 @@
 import { describe, it } from "mocha";
 import { expect } from "chai";
-import { findRepeatNumber } from "./src/offer/3";
-import { ListNode, Solution } from './src/algorithm/math/ReservoirSampling';
-import { divingBoard, respace } from './src/algorithm/math/Memorize'
-import pivotIndex from "./src/leetbook/arrayAndString/pivotIndex";
-import searchInsert from "./src/leetbook/arrayAndString/searchInsert";
-import {rotate} from "./src/leetbook/arrayAndString/rotate";
-import {setZeroes} from "./src/leetbook/arrayAndString/setZeros";
+import pivotIndex from "./pivotIndex";
+import searchInsert from "./searchInsert";
+import {rotate} from "./rotate";
+import {setZeroes} from "./setZeros";
+import {reverseString} from "./reverseString";
+import {arrayPairSum} from "./arrayPairSum";
+import {binarySearch, twoSum} from "./twoSum";
 
 
 describe('pivotIndex', () => {
@@ -152,4 +152,79 @@ describe('setZeros', () => {
         "0,0,0,0,0,4,5,0,0,3,1,0"
     );
   })
+});
+
+
+describe('reverseString', () => {
+    it('case 1', () => {
+        let s = ["h","e","l","l","o"]
+        reverseString(s)
+        expect(s.join('')).to.equal(
+            "olleh"
+        );
+    })
+    it('case 2', () => {
+        let s = ["a","e","l","l","o"]
+        reverseString(s)
+        expect(s.join('')).to.equal(
+            "ollea"
+        );
+    })
+});
+
+describe('arrayPairSum', () => {
+    it('case 1', () => {
+        let nums = [1,4,3,2]
+        expect(arrayPairSum(nums)).to.equal(
+            4
+        );
+    })
+    it('case 2', () => {
+        let nums = [6,2,6,5,1,2]
+        expect(arrayPairSum(nums)).to.equal(
+            9
+        );
+    })
+});
+
+describe('twoSum', () => {
+    it('case 1', () => {
+        expect(twoSum([2,7,11,15], 9).toString()).to.equal(
+            "1,2"
+        );
+    })
+    it('case 2', () => {
+        expect(twoSum([2,3,4], 6).toString()).to.equal(
+            "1,3"
+        );
+    })
+    it('case 3', () => {
+        expect(twoSum([-1,0], -1).toString()).to.equal(
+            "1,2"
+        );
+    })
+    it('case 5', () => {
+        expect(twoSum([5,25,75], 100).toString()).to.equal(
+            "2,3"
+        );
+    })
+});
+
+
+describe('binarySearch', () => {
+    it('case 1', () => {
+        expect(binarySearch([2,7,11,15], 11)).to.equal(
+            2
+        );
+    })
+    it('case 2', () => {
+        expect(binarySearch([2,3,4], 6)).to.equal(
+            -1
+        );
+    })
+    it('case 3', () => {
+        expect(binarySearch([-1,0], -1)).to.equal(
+            0
+        );
+    })
 });
